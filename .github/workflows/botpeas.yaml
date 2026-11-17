@@ -33,18 +33,18 @@ jobs:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           NTFY_AUTH: ${{ secrets.NTFY_AUTH }}
 
-      # - name: Create local changes
-      #   run: git add output/botpeas.json
+      - name: Create local changes
+        run: git add output/botpeas.json
 
-      # - name: Commit results to Github
-      #   run: |
-      #       git config --local user.email ""
-      #       git config --global user.name "BotPEASS"
-      #       git commit -m "Bot auto update" -a --allow-empty
+      - name: Commit results to Github
+        run: |
+            git config --local user.email ""
+            git config --global user.name "BotPEASS"
+            git commit -m "Bot auto update" -a --allow-empty
 
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #      github_token: ${{ secrets.GITHUB_TOKEN }}
-      #      branch: ${{ github.ref }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+           branch: ${{ github.ref }}
 
