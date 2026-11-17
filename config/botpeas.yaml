@@ -1,38 +1,75 @@
 ALL_VALID: no
 
+# Поиск в описании БЕЗ учета регистра (критичные векторы, 0-day и резонансные баги)
 DESCRIPTION_KEYWORDS_I:
-- privilege escalation
-- escalation
-- privesc
-- high integrity
-- elevated privilege
-- escalation of privilege
-- " sudo "
-- " suid "
-- " pe "
-- " UAC "
-- User Account Control
-- linpeas
-- winpeas
-- docker
-- kubernetes
-- " lxc "
-- podman
+# Критичные векторы для внешнего периметра
+- unauthenticated remote code execution
+- pre-auth remote code execution
+- authentication bypass
+- auth bypass
+- without authentication
 
+# Маркеры реальных атак и критичности (ловим 0-day по всему миру)
+- exploited in the wild
+- active exploitation
+- wormable
+- zero-day
+- 0-day
+
+# Громкие названия уязвимостей (без ложных срабатываний на powershell/webshell)
+- 4shell
+- 2shell
+- toshell
+- bleed
+
+# Редкое/новое ПО из вашего списка (может отсутствовать в стандартном словаре CPE)
+- proxmox
+- stalwart
+- keydb
+- garnet
+
+# Поиск в описании С учетом регистра (строгие аббревиатуры)
 DESCRIPTION_KEYWORDS:
-- ThisIsACaseSensitiveExample
+- RCE
 
+# Поиск по названию продукта/вендора БЕЗ учета регистра (ваш стек)
 PRODUCT_KEYWORDS_I:
-- sudo
-- docker
+# Инфраструктура, виртуализация и контейнеры
+- proxmox
+- virtual_environment
 - kubernetes
-- lxc
-- podman
-- container
-- linux
-- windows
-- macos
+- k8s
+- containerd
+- runc
 
+# Веб-серверы, балансировщики и DNS
+- nginx
+- haproxy
+- coredns
+- isc:bind
+- bind9
 
+# Почта и DevOps-инструменты
+- stalwart
+- roundcube
+- gitlab
+
+# Базы данных и кэш
+- postgresql
+- postgres
+- redis
+- keydb
+- garnet
+
+# Языки программирования и их внешние веб-рантаймы
+- php:php
+- php-fpm
+- golang:go
+- python:python
+- gunicorn
+- uvicorn
+- werkzeug
+
+# Поиск по названию продукта С учетом регистра
 PRODUCT_KEYWORDS:
 - ThisIsACaseSensitiveExample
